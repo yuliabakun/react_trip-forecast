@@ -1,9 +1,7 @@
-import './App.css'
+import './index.css'
 
-function App() {
+export default function App() {
   return (
     <h1>React app</h1>
   )
 }
-
-export default App
