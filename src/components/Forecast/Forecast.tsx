@@ -1,5 +1,7 @@
+import './Forecast.css';
+
 export function Forecast() {
   return (
-    <h1>Forecast</h1>
-  )
+    <div className='forecastList'>Forecast</div>
+  );
 }

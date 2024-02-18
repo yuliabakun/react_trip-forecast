@@ -1,0 +1,4 @@
+.searchbar {
+  grid-column: 1 / span 6;
+  grid-row: 2;
+}

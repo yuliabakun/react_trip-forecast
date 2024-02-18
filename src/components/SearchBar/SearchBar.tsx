@@ -1,5 +1,13 @@
+import './SearchBar.css';
+
 export function SearchBar() {
   return (
-    <h1>Search Bar</h1>
-  )
+    <div className='searchbar'>
+      <input
+        className='searchbar__input'
+        type='search'
+        placeholder='type text'
+      />
+    </div>
+  );
 }

@@ -3,3 +3,44 @@
   margin: 0;
   padding: 0;
 }
+
+/* default font styles */
+.roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-medium {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* general page styles */
+.app {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(4, auto);
+  gap: 10px;
+
+  min-height: 100vh;
+  margin: 0 0 0 20px;
+}
+
+.app__title {
+  grid-column: 1 / span 6;
+  grid-row: 1;
+}
