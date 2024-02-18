@@ -1,7 +1,11 @@
 import './TripCard.css';
 import { Trip } from '../../helpers/types/Trip';
+import { useAppDispatch } from '../../helpers/globalState/hooks';
+import { setSelectedTrip } from '../../helpers/globalState/tripSlice';
 
 export function TripCard({ trip }: { trip: Trip }) {
+  const dispatch = useAppDispatch();
+
   return (
     <article className='card'>
       <div
@@ -20,6 +24,8 @@ export function TripCard({ trip }: { trip: Trip }) {
         <p className='info__dates roboto-regular'>
           {`${trip.startAt} - ${trip.endAt}`}
         </p>
+
+        <button onClick={() => dispatch(setSelectedTrip(trip))}>Select</button>
       </div>
     </article>
   );
