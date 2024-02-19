@@ -1,4 +1,32 @@
 .searchbar {
   grid-column: 1 / span 6;
   grid-row: 2;
+  margin-bottom: 30px;
+}
+
+.search {
+  background-color: var(--bg-gray);
+  display: flex;
+  width: fit-content;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.search__icon {
+  height: 15px;
+  width: 15px;
+}
+
+.search__input {
+  background: none;
+  border: none;
+  height: 20px;
+}
+
+.search__input:active,
+.search__input:focus {
+  outline: none;
 }

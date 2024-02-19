@@ -2,10 +2,11 @@ import './ForecastAside.css';
 import { useEffect, useState } from 'react';
 import { useAppSelector } from '../../helpers/globalState/hooks';
 import { getCurrentWeatherData } from '../../helpers/api/fetchHelper';
+import { WeatherData } from '../../helpers/types/Weather';
 
-export function ForecastAside() {
+export default function ForecastAside() {
   const { selectedTrip } = useAppSelector(state => state.trips);
-  const [weatherData, setWeatherData] = useState(null);
+  const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
 
   useEffect(() => {
     if (selectedTrip) {

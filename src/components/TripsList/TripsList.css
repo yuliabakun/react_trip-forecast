@@ -5,4 +5,23 @@
   display: flex;
   gap: 30px;
   overflow-y: auto;
+  margin-bottom: 30px;
+}
+
+/* styles to customize scrollbar */
+.tripslist::-webkit-scrollbar {
+  height: 10px;
+}
+
+.tripslist::-webkit-scrollbar-thumb {
+  background-color: var(--accent-gray);
+  border-radius: 5px;
+}
+
+.tripslist::-webkit-scrollbar-thumb:hover {
+  background-color: var(--dark-gray);
+}
+
+.tripslist::-webkit-scrollbar-track {
+  background-color: var(--bg-gray);
 }

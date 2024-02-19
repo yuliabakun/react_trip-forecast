@@ -1,6 +1,14 @@
-.forecastList {
+.forecast {
   grid-column: 1 / span 6;
   grid-row: 4;
-  background-color: lightgoldenrodyellow;
-  height: 600px;
+  margin-bottom: 80px;
+}
+
+.forecast__title {
+  margin-bottom: 30px;
+}
+
+.forecast__info {
+  display: flex;
+  gap: 40px;
 }

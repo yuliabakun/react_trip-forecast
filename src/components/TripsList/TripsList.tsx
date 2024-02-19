@@ -1,8 +1,8 @@
-import { tripsList } from '../../helpers/static/tripsList';
-import { TripCard } from '../TripCard';
 import './TripsList.css';
+import TripCard from '../TripCard/TripCard';
+import { tripsList } from '../../helpers/static/tripsList';
 
-export function TripsList() {
+export default function TripsList() {
   return (
     <div className='tripslist'>
       {tripsList.map(trip => (

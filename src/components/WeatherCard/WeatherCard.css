@@ -1,0 +1,11 @@
+.weatherCard {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.weatherCard__weekday {
+  color: var(--accent-gray);
+}

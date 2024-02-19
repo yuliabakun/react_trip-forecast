@@ -1,0 +1,64 @@
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  width: 50%;
+  /* z-index: 1000; */
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* topbar styles */
+.modal__topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid lightgray;
+}
+
+.topbar__title {
+  font-weight: 400;
+}
+
+.topbar__button {
+  height: 20px;
+  width: 20px;
+  border: none;
+  background: white url('../../assets/icons/icon-close-gray.svg') no-repeat center;
+  cursor: pointer;
+}
+
+/* styles for control buttons */
+.modal__controls {
+  padding: 20px;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  border-top: 1px solid lightgray;
+}
+
+.control__cancel {
+  padding: 8px 15px;
+  margin-right: 10px;
+  background-color: white;
+  border: 1px solid lightgray;
+  cursor: pointer;
+}
+
+.control__submit {
+  padding: 8px 15px;
+  color: white;
+  background-color: #1890FF;
+  border: 1px solid #1890FF;
+  cursor: pointer;
+}
