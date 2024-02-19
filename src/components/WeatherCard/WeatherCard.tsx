@@ -17,7 +17,7 @@ export default function WeatherCard({ weatherInfo }: { weatherInfo: WeatherDay }
       <p className='weatherCard__weekday'>{weekdays[day.getDay()]}</p>
 
       <div>
-        <img src={`src/assets/weather/${weatherInfo.icon}.svg`} />
+        <img src={`https://raw.githubusercontent.com/yuliabakun/react_trip-forecast/92737d8c47607ae5411852310e302f80e9dd6fa2/src/assets/weather/${weatherInfo.icon}.svg`} />
       </div>
 
       <p>{getTemperatureData()}</p>

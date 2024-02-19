@@ -16,7 +16,7 @@ export default function TripCard({ trip }: { trip: Trip }) {
       >
         <img
           className='card__img'
-          src={`src/assets/cities/${trip.destination}.jpg`}
+          src={`https://raw.githubusercontent.com/yuliabakun/react_trip-forecast/main/src/assets/cities/${trip.destination.toLowerCase()}.jpg`}
           alt={trip.destination}
         />
       </div>
