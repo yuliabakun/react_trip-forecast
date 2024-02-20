@@ -1,0 +1,28 @@
+.countdown {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.countdown__section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.countdown__time {
+  color: white;
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.countdown__text {
+  color: white;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.countdown__message {
+  color: white;
+}

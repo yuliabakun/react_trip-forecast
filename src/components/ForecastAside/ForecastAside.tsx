@@ -1,8 +1,10 @@
 import './ForecastAside.css';
 import { useEffect, useState } from 'react';
 import { useAppSelector } from '../../helpers/globalState/hooks';
-import { getCurrentWeatherData } from '../../helpers/api/fetchHelper';
+import { getCurrentWeatherData, getIconUrl } from '../../helpers/api/fetchHelper';
 import { WeatherData } from '../../helpers/types/Weather';
+import { getWeekday } from '../../helpers/static/weekdays';
+import Countdown from '../Countdown/Countdown';
 
 export default function ForecastAside() {
   const { selectedTrip } = useAppSelector(state => state.trips);
@@ -22,10 +24,25 @@ export default function ForecastAside() {
 
   return (
     <aside className='aside'>
-      <h1>Forecast Aside</h1>
-
       {weatherData && (
-        <img src={`src/assets/weather/${weatherData.days[0].icon}.svg`} />
+        <section className='aside__info'>
+          <h3 className='info__weekday'>
+            {getWeekday(weatherData.days[0].datetime)}
+          </h3>
+
+          <div className='info__temperature'>
+            <img className='info__temperature__image' src={getIconUrl(weatherData.days[0].icon)} />
+            <p className='info__temperature__degree'>
+              {`${Math.round(weatherData.days[0].temp)}`}
+            </p>
+          </div>
+
+          <p className='info__location'>{weatherData.address}</p>
+        </section>
+      )}
+
+      {selectedTrip && (
+        <Countdown targetDate={selectedTrip.startAt} />
       )}
     </aside>
   );

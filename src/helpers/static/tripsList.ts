@@ -2,7 +2,7 @@ export const tripsList = [
   { 
     id: '81',
     destination: 'Paris',
-    startAt : '2024-02-20',
+    startAt : '2024-02-23',
     endAt: '2024-02-25',
   },
   { 

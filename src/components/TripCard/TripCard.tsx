@@ -2,6 +2,7 @@ import './TripCard.css';
 import { Trip } from '../../helpers/types/Trip';
 import { useAppDispatch } from '../../helpers/globalState/hooks';
 import { setSelectedTrip } from '../../helpers/globalState/tripSlice';
+import { getCityImage } from '../../helpers/api/fetchHelper';
 
 export default function TripCard({ trip }: { trip: Trip }) {
   const dispatch = useAppDispatch();
@@ -16,7 +17,7 @@ export default function TripCard({ trip }: { trip: Trip }) {
       >
         <img
           className='card__img'
-          src={`https://raw.githubusercontent.com/yuliabakun/react_trip-forecast/main/src/assets/cities/${trip.destination.toLowerCase()}.jpg`}
+          src={getCityImage(trip.destination)}
           alt={trip.destination}
         />
       </div>

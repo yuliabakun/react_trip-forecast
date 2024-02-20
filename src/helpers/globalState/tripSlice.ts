@@ -15,7 +15,7 @@ interface tripSlice {
 
 const initialState: tripSlice = {
   allTrips: [],
-  selectedTrip: tripMockup,
+  selectedTrip: null,
 };
 
 export const tripSlice = createSlice({

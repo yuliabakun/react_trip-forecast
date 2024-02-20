@@ -9,3 +9,8 @@
 .weatherCard__weekday {
   color: var(--accent-gray);
 }
+
+.weatherCard__image {
+  height: 50px;
+  width: 50px;
+}

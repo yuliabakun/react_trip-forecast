@@ -10,5 +10,6 @@
 
 .forecast__info {
   display: flex;
-  gap: 40px;
+  gap: 20px;
+  overflow-y: auto;
 }

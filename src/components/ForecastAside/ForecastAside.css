@@ -1,6 +1,56 @@
 .aside {
-  background-color: lightblue;
+  background-color: var(--dark-blue);
 
   grid-column: 7 / span 3; 
   grid-row: 1 / span 4;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.aside__info {
+  margin-bottom: 80px;
+}
+
+.info__weekday {
+  color: white;
+  font-size: 40px;
+  line-height: 60px;
+  text-align: center;
+}
+
+.info__temperature {
+  display: flex;
+  align-items: center;
+}
+
+.info__temperature__image {
+  height: 70px;
+  width: 70px;
+  margin-right: 20px;
+}
+
+.info__temperature__degree {
+  color: white;
+  font-size: 90px;
+  font-weight: 300;
+  position: relative; 
+}
+
+.info__temperature__degree::after {
+  content: '°C';
+  position: absolute;
+  top: 0;
+  right: -30px;
+  font-size: 30px;
+}
+
+.info__location {
+  color: white;
+  text-align: center;
+  font-size: 35px;
+  line-height: 55px;
+  font-weight: 300;
 }
