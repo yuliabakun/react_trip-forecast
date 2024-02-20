@@ -1,17 +1,14 @@
 import './Modal.css';
-import { v4 as uuidv4 } from 'uuid';
 import ReactDom from 'react-dom';
 import { FormEvent, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { Trip } from '../../helpers/types/Trip';
 import { FormDataEvent } from '../../helpers/types/FormDataEvent';
+import { ModalProps } from '../../helpers/types/PropsTypes';
 import { citiesList } from '../../helpers/static/citiesList';
 import DatePicker from '../DatePicker/DatePicker';
-import { useAppDispatch } from '../../helpers/globalState/hooks';
-import { addTrip } from '../../helpers/globalState/tripSlice';
 
-export default function CreateTripModal(
-  { open, onClose }: { open: boolean, onClose: () => void }) {
-    const dispatch = useAppDispatch();
+export default function Modal({ open, onClose, trips, addTrip }: ModalProps) {
   const modalRoot = document.getElementById('modal') as HTMLElement;
   const [formData, setFormData] = useState<Trip>({
     id: '',
@@ -25,9 +22,6 @@ export default function CreateTripModal(
 
     setFormData({ ...formData, [name]: value });
   }
-
-  // delete console
-  console.log(formData);
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
@@ -47,9 +41,11 @@ export default function CreateTripModal(
 
     formData.id = uuidv4();
 
-    dispatch(addTrip(formData));
+    const newTrips = [...trips, formData];
+
+    addTrip(newTrips);
     handleClearForm();
-    onClose();
+    onClose(false);
   };
 
   const handleClearForm = () => {
@@ -70,7 +66,10 @@ export default function CreateTripModal(
       <div className='modal'>
         <div className='modal__topbar'>
           <h3 className='topbar__title'>Create trip</h3>
-          <button className='topbar__button' onClick={onClose} />
+          <button className='topbar__button' onClick={() => {
+            handleClearForm();
+            onClose(false);
+          }} />
         </div>
 
         <form id='add-trip-form' className='form'>

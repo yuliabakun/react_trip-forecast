@@ -17,7 +17,7 @@ export const getCurrentWeatherData = async (city: string) => {
 };
 
 export const getWeatherDataBetweenDates = async (city: string, from: string, to: string) => {
-  // date format is yyyy-mm-dd
+  // valid date format is yyyy-mm-dd
   const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}/${from}/${to}?unitGroup=metric&include=days&key=${API_KEY}&contentType=json`;
 
   return fetch(url)

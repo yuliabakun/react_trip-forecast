@@ -5,14 +5,18 @@
 }
 
 .search {
-  background-color: var(--bg-gray);
   display: flex;
-  width: fit-content;
-  gap: 10px;
   align-items: center;
   justify-content: center;
+  gap: 10px;
+  width: fit-content;
   padding: 15px;
   border-radius: 10px;
+  background-color: var(--bg-gray);
+}
+
+.search--active {
+  outline: 1px solid var(--dark-blue);
 }
 
 .search__icon {

@@ -1,13 +1,11 @@
 import './DatePicker.css';
 import { useState } from 'react';
-import { Trip } from '../../helpers/types/Trip';
-import { FormDataEvent } from '../../helpers/types/FormDataEvent';
-import { getTodayDate } from '../../helpers/static/getDate';
+import { DatePickerProps } from '../../helpers/types/PropsTypes';
+import { getMaxDate, getTodayDate } from '../../helpers/static/getDate';
 
-export default function DatePicker(
-  { formData, handleInputData }: { formData: Trip, handleInputData: (event: FormDataEvent) => void }
-) {
+export default function DatePicker({ formData, handleInputData }: DatePickerProps) {
   const [minDate] = useState(getTodayDate());
+  const [maxDate] = useState(getMaxDate());
   const [prevDate, setPrevDate] = useState<null | string>(null);
 
   return (
@@ -22,6 +20,7 @@ export default function DatePicker(
           placeholder='Select date'
           className='form__input form__datefield'
           min={minDate}
+          max={maxDate}
           value={formData.startAt}
           onChange={event => {
             handleInputData(event);
@@ -40,6 +39,7 @@ export default function DatePicker(
           placeholder='Select date'
           className='form__input form__datefield'
           min={prevDate || minDate}
+          max={maxDate}
           value={formData.endAt}
           onChange={event => handleInputData(event)}
         />

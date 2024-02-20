@@ -1,13 +1,11 @@
 .aside {
-  background-color: var(--dark-blue);
-
   grid-column: 7 / span 3; 
   grid-row: 1 / span 4;
-
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  background-color: var(--dark-blue);
 }
 
 .aside__info {
@@ -24,6 +22,7 @@
 .info__temperature {
   display: flex;
   align-items: center;
+  width: 100%;
 }
 
 .info__temperature__image {
@@ -49,8 +48,14 @@
 
 .info__location {
   color: white;
-  text-align: center;
   font-size: 35px;
-  line-height: 55px;
   font-weight: 300;
+  line-height: 55px;
+  text-align: center;
+}
+
+.aside__message {
+  color: white;
+  font-size: 25px;
+  text-align: center;
 }

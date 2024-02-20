@@ -24,26 +24,31 @@ export default function ForecastAside() {
 
   return (
     <aside className='aside'>
-      {weatherData && (
-        <section className='aside__info'>
-          <h3 className='info__weekday'>
-            {getWeekday(weatherData.days[0].datetime)}
-          </h3>
+      {selectedTrip ?
+        weatherData && (
+          <>
+            <section className='aside__info'>
+              <h3 className='info__weekday'>
+                {getWeekday(weatherData.days[0].datetime)}
+              </h3>
 
-          <div className='info__temperature'>
-            <img className='info__temperature__image' src={getIconUrl(weatherData.days[0].icon)} />
-            <p className='info__temperature__degree'>
-              {`${Math.round(weatherData.days[0].temp)}`}
-            </p>
-          </div>
+              <div className='info__temperature'>
+                <img
+                  className='info__temperature__image'
+                  src={getIconUrl(weatherData.days[0].icon)}
+                />
+                <p className='info__temperature__degree'>
+                  {`${Math.round(weatherData.days[0].temp)}`}
+                </p>
+              </div>
+              <p className='info__location'>{weatherData.address}</p>
+            </section>
 
-          <p className='info__location'>{weatherData.address}</p>
-        </section>
-      )}
-
-      {selectedTrip && (
-        <Countdown targetDate={selectedTrip.startAt} />
-      )}
+            <Countdown targetDate={selectedTrip.startAt} />
+          </>
+        ) : (
+          <p className='aside__message'>Please, select a trip from the list</p>
+        )}
     </aside>
   );
 }

@@ -1,9 +1,9 @@
+import './Forecast.css';
 import { useEffect, useState } from 'react';
 import { useAppSelector } from '../../helpers/globalState/hooks';
-import './Forecast.css';
 import { getWeatherDataBetweenDates } from '../../helpers/api/fetchHelper';
-import WeatherCard from '../WeatherCard/WeatherCard';
 import { WeatherData, WeatherDay } from '../../helpers/types/Weather';
+import WeatherCard from '../WeatherCard/WeatherCard';
 
 export default function Forecast() {
   const { selectedTrip } = useAppSelector(state => state.trips);

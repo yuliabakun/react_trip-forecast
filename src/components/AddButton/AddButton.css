@@ -1,11 +1,14 @@
 .button {
   grid-column: 6 / span 1; 
   grid-row: 3;
-
-  background-color: var(--bg-gray);
-  border: none;
   height: 150px;
   width: 150px;
+  border: none;
+  background-color: var(--bg-gray);
+}
+
+.button:hover {
+  border: 1px solid var(--dark-blue);
 }
 
 .button__content {
