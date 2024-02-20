@@ -7,7 +7,14 @@ interface tripSlice {
 }
 
 const initialState: tripSlice = {
-  allTrips: [],
+  allTrips: [
+    {
+      id: '81',
+      destination: 'Paris',
+      startAt: '2024-02-23',
+      endAt: '2024-02-25',
+    }
+  ],
   selectedTrip: null,
 };
 

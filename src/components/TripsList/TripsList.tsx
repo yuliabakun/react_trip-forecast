@@ -1,11 +1,13 @@
 import './TripsList.css';
 import TripCard from '../TripCard/TripCard';
-import { tripsList } from '../../helpers/static/tripsList';
+import { useAppSelector } from '../../helpers/globalState/hooks';
 
 export default function TripsList() {
+  const { allTrips } = useAppSelector(state => state.trips);
+
   return (
     <div className='tripslist'>
-      {tripsList.map(trip => (
+      {allTrips.map(trip => (
         <TripCard key={trip.id} trip={trip} />
       ))}
     </div>

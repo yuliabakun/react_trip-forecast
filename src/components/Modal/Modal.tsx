@@ -1,12 +1,17 @@
 import './Modal.css';
+import { v4 as uuidv4 } from 'uuid';
 import ReactDom from 'react-dom';
-import AddTripForm from '../AddTripForm/AddTripForm';
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 import { Trip } from '../../helpers/types/Trip';
 import { FormDataEvent } from '../../helpers/types/FormDataEvent';
+import { citiesList } from '../../helpers/static/citiesList';
+import DatePicker from '../DatePicker/DatePicker';
+import { useAppDispatch } from '../../helpers/globalState/hooks';
+import { addTrip } from '../../helpers/globalState/tripSlice';
 
 export default function CreateTripModal(
   { open, onClose }: { open: boolean, onClose: () => void }) {
+    const dispatch = useAppDispatch();
   const modalRoot = document.getElementById('modal') as HTMLElement;
   const [formData, setFormData] = useState<Trip>({
     id: '',
@@ -21,6 +26,41 @@ export default function CreateTripModal(
     setFormData({ ...formData, [name]: value });
   }
 
+  // delete console
+  console.log(formData);
+
+  const handleSubmit = (event: FormEvent) => {
+    event.preventDefault();
+
+    if (!formData.destination || !formData.startAt || !formData.endAt) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+
+    const start = formData.startAt;
+    const end = formData.endAt;
+
+    if (new Date(start) > new Date(end)) {
+      alert('End date cannot be earlier than Start date.');
+      return;
+    }
+
+    formData.id = uuidv4();
+
+    dispatch(addTrip(formData));
+    handleClearForm();
+    onClose();
+  };
+
+  const handleClearForm = () => {
+    setFormData({
+      id: '',
+      destination: '',
+      startAt: '',
+      endAt: '',
+    });
+  };
+
   if (!open) return null;
 
   return ReactDom.createPortal(
@@ -33,11 +73,47 @@ export default function CreateTripModal(
           <button className='topbar__button' onClick={onClose} />
         </div>
 
-        <AddTripForm setData={handleInputData} />
+        <form id='add-trip-form' className='form'>
+          <div className='form__field'>
+            <label htmlFor='select-city' className='form__label'>City</label>
+
+            <select
+              required
+              name='destination'
+              id='select-city'
+              className='form__input form__select'
+              value={formData.destination}
+              onChange={event => handleInputData(event)}
+            >
+              <option value='' disabled>Please select a city</option>
+
+              {citiesList.map(city => (
+                <option key={city.id} value={city.location}>
+                  {city.location}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <DatePicker
+            formData={formData}
+            handleInputData={handleInputData}
+          />
+        </form>
 
         <div className='modal__controls'>
-          <button className='control__cancel'>Cancel</button>
-          <button className='control__submit'>Save</button>
+          <button className='control__cancel' onClick={handleClearForm}>
+            Cancel
+          </button>
+
+          <button
+            type='submit'
+            form='add-trip-form'
+            className='control__submit'
+            onClick={(event) => handleSubmit(event)}
+          >
+            Save
+          </button>
         </div>
       </div>
     </>,

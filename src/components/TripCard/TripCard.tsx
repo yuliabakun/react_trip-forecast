@@ -7,6 +7,16 @@ import { getCityImage } from '../../helpers/api/fetchHelper';
 export default function TripCard({ trip }: { trip: Trip }) {
   const dispatch = useAppDispatch();
 
+  const getTripDates = () => {
+    let start = trip.startAt;
+    let end = trip.endAt;
+
+    start = start.split('-').reverse().join('.');
+    end = end.split('-').reverse().join('.');
+
+    return `${start} - ${end}`;
+  };
+
   return (
     <article
       className='card'
@@ -25,9 +35,7 @@ export default function TripCard({ trip }: { trip: Trip }) {
       <div className='card__info'>
         <h3 className='info__title'>{trip.destination}</h3>
 
-        <p className='info__dates'>
-          {`${trip.startAt} - ${trip.endAt}`}
-        </p>
+        <p className='info__dates'>{getTripDates()}</p>
       </div>
     </article>
   );

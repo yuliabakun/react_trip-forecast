@@ -11,6 +11,7 @@ export default function SearchBar() {
           className='search__input'
           type='search'
           placeholder='Search your trip'
+          id='search-trips'
         />
       </span>
     </div>

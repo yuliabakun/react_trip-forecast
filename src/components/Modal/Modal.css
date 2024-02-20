@@ -62,3 +62,40 @@
   border: 1px solid #1890FF;
   cursor: pointer;
 }
+
+/* styles for form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px 20px;
+}
+
+.form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form__label::before {
+  content: "* ";
+  color: red;
+}
+
+.form__input {
+  padding: 10px;
+  border-radius: 0;
+  border: 1px solid lightgray;
+}
+
+.form__input::placeholder {
+  color: lightgray;
+}
+
+.form__select {
+  padding-right: 100px;
+}
+
+.form__datefield {
+  appearance: none;
+}
