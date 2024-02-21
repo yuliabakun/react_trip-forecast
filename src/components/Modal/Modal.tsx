@@ -7,6 +7,7 @@ import { FormDataEvent } from '../../helpers/types/FormDataEvent';
 import { ModalProps } from '../../helpers/types/PropsTypes';
 import { citiesList } from '../../helpers/static/citiesList';
 import DatePicker from '../DatePicker/DatePicker';
+import closeIcon from '../../assets/icons/icon-plus-gray.svg';
 
 export default function Modal({ open, onClose, trips, addTrip }: ModalProps) {
   const modalRoot = document.getElementById('modal') as HTMLElement;
@@ -66,10 +67,15 @@ export default function Modal({ open, onClose, trips, addTrip }: ModalProps) {
       <div className='modal'>
         <div className='modal__topbar'>
           <h3 className='topbar__title'>Create trip</h3>
-          <button className='topbar__button' onClick={() => {
-            handleClearForm();
-            onClose(false);
-          }} />
+          <button
+            className='topbar__button'
+            onClick={() => {
+              handleClearForm()
+              onClose(false)
+            }}
+          >
+            <img src={closeIcon} alt='close icon' className='topbar__button__icon' />
+          </button>
         </div>
 
         <form id='add-trip-form' className='form'>
