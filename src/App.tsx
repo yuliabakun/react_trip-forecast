@@ -1,8 +1,8 @@
 import './index.css';
 import { useState } from 'react';
 import { useLocalStorage } from './helpers/hooks/useLocalStorage';
-import { GoogleLogin } from '@react-oauth/google';
 import { Trip } from './helpers/types/Trip';
+import LoginPanel from './components/LoginPanel/LoginPanel';
 import SearchBar from './components/SearchBar/SearchBar';
 import ForecastAside from './components/ForecastAside/ForecastAside';
 import TripsList from './components/TripsList/TripsList';
@@ -21,14 +21,7 @@ export default function App() {
           Weather <strong>Forecast</strong>
         </h1>
 
-        <GoogleLogin
-          onSuccess={(credentialResponse) => {
-            console.log(credentialResponse);
-          }}
-          onError={() => {
-            alert('Login Failed');
-          }}
-        />
+        <LoginPanel />
       </div>
 
       <SearchBar />
