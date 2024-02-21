@@ -1,30 +1,26 @@
-# React + TypeScript + Vite
+# Weather Trip Planner
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+Weather Trip Planner is a React-based application designed to help you plan your trips by providing weather forecasts for your selected dates. With this app, you can create trips specifying the start and end dates and check the weather forecast for each day of your upcoming trip.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+You can check out the live [DEMO](https://yuliabakun.github.io/react_trip-forecast/).
 
-## Expanding the ESLint configuration
+## Important Notes
+* Google Login Button: The Google login button is included as an example and does not store any user data. It's solely for demonstration purposes.
+* Mocked Trip Data: The list of trips displayed in the application is mocked to showcase all functionality. Users can add their own trips, which will be stored locally in the browser's local storage.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Steps to run project locally
 
-- Configure the top-level `parserOptions` property like this:
+* clone repo to your computer
+* open terminal in project root folder
+* run npm install
+* run npm run dev
+* open your browser at http://localhost:3000 (or whatever URL is provided in the terminal)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Technologies Used
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+* React with TypeScript.
+* Redux Toolkit for state management.
+* Classnames, a library used to easily apply CSS classes dynamically.
+* Vite, the build tool used to run the application locally.
