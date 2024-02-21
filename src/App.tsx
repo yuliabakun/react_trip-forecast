@@ -1,6 +1,7 @@
 import './index.css';
 import { useState } from 'react';
 import { useLocalStorage } from './helpers/hooks/useLocalStorage';
+import { GoogleLogin } from '@react-oauth/google';
 import { Trip } from './helpers/types/Trip';
 import SearchBar from './components/SearchBar/SearchBar';
 import ForecastAside from './components/ForecastAside/ForecastAside';
@@ -15,9 +16,18 @@ export default function App() {
 
   return (
     <main className='app'>
-      <h1 className='app__title'>
-        Weather <strong>Forecast</strong>
-      </h1>
+      <div className='app__title'>
+        <h1>Weather <strong>Forecast</strong></h1>
+
+        <GoogleLogin
+          onSuccess={(credentialResponse) => {
+            console.log(credentialResponse);
+          }}
+          onError={() => {
+            console.log('Login Failed');
+          }}
+        />
+      </div>
 
       <SearchBar />
 
