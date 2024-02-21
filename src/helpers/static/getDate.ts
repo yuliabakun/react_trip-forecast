@@ -26,3 +26,13 @@ export const getMaxDate = () => {
 
   return `${year}-${month}-${day}`;
 };
+
+export const getTripDates = (startAt: string, endAt: string) => {
+  let start = startAt;
+  let end = endAt;
+
+  start = start.split('-').reverse().join('.');
+  end = end.split('-').reverse().join('.');
+
+  return `${start} - ${end}`;
+};

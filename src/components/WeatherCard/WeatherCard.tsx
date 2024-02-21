@@ -17,7 +17,11 @@ export default function WeatherCard({ weatherInfo }: WeatherCardProps) {
         {getWeekday(weatherInfo.datetime)}
       </p>
 
-      <img className='weatherCard__image' src={getIconUrl(weatherInfo.icon)} />
+      <img
+        className='weatherCard__image'
+        src={getIconUrl(weatherInfo.icon)}
+        alt="image of the city"
+      />
 
       <p>{getTemperatureData()}</p>
     </article>

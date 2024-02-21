@@ -41,6 +41,11 @@
   height: 100%;
   width: 100%;
   transform: rotate(45deg);
+  transition: transform 0.5s ease;
+}
+
+.topbar__button__icon:hover {
+  transform: rotate(135deg);
 }
 
 /* styles for control buttons */
@@ -56,16 +61,23 @@
   padding: 8px 15px;
   margin-right: 10px;
   background-color: white;
-  border: 1px solid lightgray;
+  border: 1px solid var(--accent-gray);
   cursor: pointer;
+  transition: transform 0.5s ease;
 }
 
 .control__submit {
   padding: 8px 15px;
   color: white;
-  background-color: #1890FF;
-  border: 1px solid #1890FF;
+  background-color: var(--accent-blue);
+  border: 1px solid var(--accent-blue);
   cursor: pointer;
+  transition: transform 0.5s ease;
+}
+
+.control__cancel:hover,
+.control__submit:hover {
+  transform: scale(1.1);
 }
 
 /* styles for form */
@@ -91,6 +103,11 @@
   padding: 10px;
   border-radius: 0;
   border: 1px solid lightgray;
+  outline: none;
+}
+
+.form__input:hover {
+  border: 1px solid var(--dark-blue);
 }
 
 .form__input::placeholder {

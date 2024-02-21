@@ -26,7 +26,7 @@ export default function ForecastAside() {
     <aside className='aside'>
       {selectedTrip ?
         weatherData && (
-          <>
+          <div className='aside__content'>
             <section className='aside__info'>
               <h3 className='info__weekday'>
                 {getWeekday(weatherData.days[0].datetime)}
@@ -45,9 +45,11 @@ export default function ForecastAside() {
             </section>
 
             <Countdown targetDate={selectedTrip.startAt} />
-          </>
+          </div>
         ) : (
-          <p className='aside__message'>Please, select a trip from the list</p>
+          <p className='aside__message'>
+            Please, select a trip from the list
+          </p>
         )}
     </aside>
   );

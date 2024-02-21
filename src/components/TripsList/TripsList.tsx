@@ -15,10 +15,10 @@ export default function TripsList({ trips }: TripsListProps) {
 
     if (searchQuery) {
       filteredTrips = filteredTrips.filter(trip => {
-        const title = trip.destination.toLowerCase();
-        const query = searchQuery.toLowerCase();
+        const titleNormalized = trip.destination.toLowerCase();
+        const queryNormalized = searchQuery.toLowerCase();
 
-        return title.includes(query);
+        return titleNormalized.includes(queryNormalized);
       });
     }
 
@@ -40,7 +40,7 @@ export default function TripsList({ trips }: TripsListProps) {
       <TripCard key={mockTrip.id} trip={mockTrip} />
 
       {trips.length === 0 && !noSearchResult && (
-        <p>Trips you added will appear here</p>
+        <p>Trips you added will appear here.</p>
       )}
 
       {noSearchResult && (

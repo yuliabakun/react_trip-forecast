@@ -39,7 +39,7 @@ export default function Countdown({ targetDate }: CountdownProps) {
 
   return (
     <div className='countdown'>
-      {seconds > 0 ?
+      {days > 0 || hours > 0 || minutes > 0 || seconds > 0 ?
         (
           <>
             <div className='countdown__section'>
@@ -62,11 +62,8 @@ export default function Countdown({ targetDate }: CountdownProps) {
               <p className='countdown__text'>seconds</p>
             </div>
           </>
-        )
-        :
-        (
-          <h2 className='countdown__message'>Enjoy your trip!</h2>
-        )}
+        ) : (
+          <h2 className='countdown__message'>Enjoy your trip!</h2>)}
     </div>
   );
 }

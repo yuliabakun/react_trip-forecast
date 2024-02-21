@@ -20,24 +20,25 @@
   grid-template-columns: repeat(9, 1fr);
   grid-template-rows: repeat(4, auto);
   gap: 10px;
-
   min-height: 100vh;
-  margin: 0 0 0 20px;
+  margin-left: 20px;
 }
 
-.app__title {
+.app__topbar {
   grid-column: 1 / span 6;
   grid-row: 1;
-  font-weight: 300;
   margin: 15px 0;
-
   display: flex;
   justify-content: space-between;
 }
 
+.app__title {
+  font-weight: 300;
+}
+
 /* mobile layout */
 @media (max-width:800px) {
-  .app__title {
+  .app__topbar {
     grid-column: 1 / -1;
     grid-row: 1;
   }

@@ -6,8 +6,11 @@ export default function AddButton({ onClick }: AddButtonProps) {
   return (
     <button className='button' onClick={() => onClick(true)}>
       <div className='button__content'>
-        <img className='button__icon' src={plusIcon} alt='plus icon' />
-
+        <img
+          className='button__icon'
+          src={plusIcon}
+          alt='plus icon'
+        />
         <span className='button__text'>Add trip</span>
       </div>
     </button>

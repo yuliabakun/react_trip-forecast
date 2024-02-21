@@ -7,13 +7,17 @@ import { useState } from 'react';
 
 export default function SearchBar() {
   const dispatch = useAppDispatch();
-  const { searchQuery } = useAppSelector(state => state.trips);
   const [focus, setFocus] = useState(false);
+  const { searchQuery } = useAppSelector(state => state.trips);
 
   return (
     <div className='searchbar'>
       <span className={cn('search', { 'search--active': focus })}>
-        <img src={searchIcon} className='search__icon' />
+        <img
+          src={searchIcon}
+          alt='magnifying glass icon'
+          className='search__icon'
+        />
 
         <input
           id='search-trips'
@@ -29,8 +33,8 @@ export default function SearchBar() {
         {searchQuery && (
           <button
             type='button'
-            onClick={() => dispatch(setSearchQuery(''))}
             className='search__clear'
+            onClick={() => dispatch(setSearchQuery(''))}
           >
             Clear
           </button>

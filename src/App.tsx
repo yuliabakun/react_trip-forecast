@@ -16,15 +16,17 @@ export default function App() {
 
   return (
     <main className='app'>
-      <div className='app__title'>
-        <h1>Weather <strong>Forecast</strong></h1>
+      <div className='app__topbar'>
+        <h1 className='app__title'>
+          Weather <strong>Forecast</strong>
+        </h1>
 
         <GoogleLogin
           onSuccess={(credentialResponse) => {
             console.log(credentialResponse);
           }}
           onError={() => {
-            console.log('Login Failed');
+            alert('Login Failed');
           }}
         />
       </div>

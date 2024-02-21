@@ -17,7 +17,6 @@ export default function DatePicker({ formData, handleInputData }: DatePickerProp
           name='startAt'
           type='date'
           id='input-start-date'
-          placeholder='Select date'
           className='form__input form__datefield'
           min={minDate}
           max={maxDate}
@@ -36,7 +35,6 @@ export default function DatePicker({ formData, handleInputData }: DatePickerProp
           name='endAt'
           type='date'
           id='input-end-date'
-          placeholder='Select date'
           className='form__input form__datefield'
           min={prevDate || minDate}
           max={maxDate}

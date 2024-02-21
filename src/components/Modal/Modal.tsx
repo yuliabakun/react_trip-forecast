@@ -74,7 +74,11 @@ export default function Modal({ open, onClose, trips, addTrip }: ModalProps) {
               onClose(false)
             }}
           >
-            <img src={closeIcon} alt='close icon' className='topbar__button__icon' />
+            <img
+              src={closeIcon}
+              alt='close icon'
+              className='topbar__button__icon'
+            />
           </button>
         </div>
 

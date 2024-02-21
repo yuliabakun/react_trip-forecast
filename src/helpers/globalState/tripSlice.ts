@@ -1,6 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { Trip } from '../types/Trip';
 
+const tripExample = {
+  id: '1',
+  destination: 'Paris',
+  startAt: '2024-02-29',
+  endAt: '2024-03-07',
+};
+
 interface tripSlice {
   mockTrip: Trip,
   selectedTrip: Trip | null,
@@ -8,18 +15,8 @@ interface tripSlice {
 }
 
 const initialState: tripSlice = {
-  mockTrip: {
-    id: '1',
-    destination: 'Paris',
-    startAt: '2024-02-20',
-    endAt: '2024-02-25',
-  },
-  selectedTrip: {
-    id: '1',
-    destination: 'Paris',
-    startAt: '2024-02-20',
-    endAt: '2024-02-25',
-  },
+  mockTrip: tripExample,
+  selectedTrip: tripExample,
   searchQuery: '',
 };
 
