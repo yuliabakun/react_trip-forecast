@@ -31,3 +31,15 @@
   font-weight: 300;
   margin: 15px 0;
 }
+
+/* mobile layout */
+@media (max-width:800px) {
+  .app__title {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  .app {
+    margin: 0 10px 0 10px;
+  }
+}

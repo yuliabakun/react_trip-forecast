@@ -8,7 +8,7 @@ export default function AddButton({ onClick }: AddButtonProps) {
       <div className='button__content'>
         <img className='button__icon' src={plusIcon} alt='plus icon' />
 
-        <span>Add trip</span>
+        <span className='button__text'>Add trip</span>
       </div>
     </button>
   );

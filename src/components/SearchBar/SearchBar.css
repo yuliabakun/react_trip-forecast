@@ -15,7 +15,7 @@
   background-color: var(--bg-gray);
 }
 
-.search--active {
+.search:hover, .search--active {
   outline: 1px solid var(--dark-blue);
 }
 
@@ -33,4 +33,18 @@
 .search__input:active,
 .search__input:focus {
   outline: none;
+}
+
+.search__clear {
+  background-color: var(--bg-gray);
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width:800px) {
+  .searchbar {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
 }

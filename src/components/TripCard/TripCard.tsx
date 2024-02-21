@@ -1,11 +1,14 @@
 import './TripCard.css';
+import cn from 'classnames';
 import { Trip } from '../../helpers/types/Trip';
-import { useAppDispatch } from '../../helpers/globalState/hooks';
+import { useAppDispatch, useAppSelector } from '../../helpers/globalState/hooks';
 import { setSelectedTrip } from '../../helpers/globalState/tripSlice';
 import { getCityImage } from '../../helpers/api/fetchHelper';
 
 export default function TripCard({ trip }: { trip: Trip }) {
   const dispatch = useAppDispatch();
+  const { selectedTrip } = useAppSelector(state => state.trips);
+  const isSelected = selectedTrip?.id === trip.id;
 
   const getTripDates = () => {
     let start = trip.startAt;
@@ -19,7 +22,7 @@ export default function TripCard({ trip }: { trip: Trip }) {
 
   return (
     <article
-      className='card'
+      className={cn('card', { 'card--active': isSelected })}
       onClick={() => dispatch(setSelectedTrip(trip))}
     >
       <div

@@ -11,10 +11,15 @@ const initialState: tripSlice = {
   mockTrip: {
     id: '1',
     destination: 'Paris',
-    startAt: '2024-02-23',
+    startAt: '2024-02-20',
     endAt: '2024-02-25',
   },
-  selectedTrip: null,
+  selectedTrip: {
+    id: '1',
+    destination: 'Paris',
+    startAt: '2024-02-20',
+    endAt: '2024-02-25',
+  },
   searchQuery: '',
 };
 

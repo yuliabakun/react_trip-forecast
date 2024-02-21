@@ -1,10 +1,6 @@
 .forecast {
   grid-column: 1 / span 6;
   grid-row: 4;
-  margin-bottom: 80px;
-}
-
-.forecast__title {
   margin-bottom: 30px;
 }
 
@@ -12,4 +8,30 @@
   display: flex;
   gap: 20px;
   overflow-y: auto;
+}
+
+/* styles to customize scrollbar */
+.forecast__info::-webkit-scrollbar {
+  height: 10px;
+}
+
+.forecast__info::-webkit-scrollbar-thumb {
+  background-color: var(--accent-gray);
+  border-radius: 5px;
+}
+
+.forecast__info::-webkit-scrollbar-thumb:hover {
+  background-color: var(--dark-gray);
+}
+
+.forecast__info::-webkit-scrollbar-track {
+  background-color: var(--bg-gray);
+}
+
+/* mobile layout  */
+@media (max-width:800px) {
+  .forecast {
+    grid-row: 5;
+    grid-column: 1 / -1;
+  }
 }

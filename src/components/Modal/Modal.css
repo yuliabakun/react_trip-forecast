@@ -5,7 +5,6 @@
   transform: translate(-50%, -50%);
   background-color: white;
   width: 50%;
-  /* z-index: 1000; */
 }
 
 .overlay {
@@ -98,4 +97,11 @@
 
 .form__datefield {
   appearance: none;
+}
+
+/* mobile layout */
+@media (max-width:800px) {
+  .modal {
+    width: 90%;
+  }
 }
