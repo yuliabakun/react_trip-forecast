@@ -3,6 +3,7 @@
   grid-row: 1 / span 4;
   display: flex;
   align-items: center;
+  justify-content: center;
   background-image: url('../../assets/icons/bg-clouds.svg');
   background-position: center;
 }

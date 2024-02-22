@@ -1,0 +1,12 @@
+.datepicker {
+  display: flex;
+  width: 100%;
+}
+
+.form__field {
+  width: 100%;
+}
+
+.date__start {
+  margin-right: 20px;
+}

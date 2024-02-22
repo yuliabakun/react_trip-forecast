@@ -9,7 +9,7 @@ export default function DatePicker({ formData, handleInputData }: DatePickerProp
   const [prevDate, setPrevDate] = useState<null | string>(null);
 
   return (
-    <>
+    <div className='datepicker'>
       <div className='form__field'>
         <label htmlFor='input-start-date' className='form__label'>Start date</label>
         <input
@@ -17,7 +17,7 @@ export default function DatePicker({ formData, handleInputData }: DatePickerProp
           name='startAt'
           type='date'
           id='input-start-date'
-          className='form__input form__datefield'
+          className='form__input form__datefield date__start'
           min={minDate}
           max={maxDate}
           value={formData.startAt}
@@ -42,6 +42,6 @@ export default function DatePicker({ formData, handleInputData }: DatePickerProp
           onChange={event => handleInputData(event)}
         />
       </div>
-    </>
+    </div>
   );
 }

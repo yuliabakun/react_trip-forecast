@@ -31,12 +31,10 @@ export default function TripsList({ trips }: TripsListProps) {
     filterTrips();
 
     setNoSearchResut(filteredTrips.length === 0 && trips.length !== 0);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchQuery, trips.length, filteredTrips.length])
 
   return (
     <div className='tripslist'>
-
       <TripCard key={mockTrip.id} trip={mockTrip} />
 
       {trips.length === 0 && !noSearchResult && (

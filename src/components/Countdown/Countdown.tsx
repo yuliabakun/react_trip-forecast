@@ -32,7 +32,6 @@ export default function Countdown({ targetDate }: CountdownProps) {
     }, 1000);
 
     return () => clearInterval(timer);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [targetDate]);
 
   const { days, hours, minutes, seconds } = timeLeft;
