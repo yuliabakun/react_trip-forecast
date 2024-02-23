@@ -1,5 +1,4 @@
 import './SearchBar.css';
-import cn from 'classnames';
 import searchIcon from '../../assets/icons/icon-search-black.svg';
 import { useAppDispatch, useAppSelector } from '../../helpers/globalState/hooks';
 import { setSearchQuery } from '../../helpers/globalState/tripSlice';
@@ -12,7 +11,7 @@ export default function SearchBar() {
 
   return (
     <div className='searchbar'>
-      <span className={cn('search', { 'search--active': focus })}>
+      <span className={`search ${ focus ? 'search--active' : ''}`}>
         <img
           src={searchIcon}
           alt='magnifying glass icon'

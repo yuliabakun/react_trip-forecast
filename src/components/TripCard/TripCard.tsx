@@ -1,5 +1,4 @@
 import './TripCard.css';
-import cn from 'classnames';
 import { Trip } from '../../helpers/types/Trip';
 import { useAppDispatch, useAppSelector } from '../../helpers/globalState/hooks';
 import { setSelectedTrip } from '../../helpers/globalState/tripSlice';
@@ -13,7 +12,7 @@ export default function TripCard({ trip }: { trip: Trip }) {
 
   return (
     <article
-      className={cn('card', { 'card--active': isSelected })}
+      className={`card ${isSelected ? 'card--active' : ''}`}
       onClick={() => dispatch(setSelectedTrip(trip))}
     >
       <div className='card__media'>
