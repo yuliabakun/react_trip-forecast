@@ -22,6 +22,5 @@ You can check out the live [DEMO](https://yuliabakun.github.io/react_trip-foreca
 
 * React with TypeScript.
 * Redux Toolkit for state management.
-* Classnames, a library used to easily apply CSS classes dynamically.
 * Vite, the build tool used to run the application locally.
 * Free weather [API](https://www.visualcrossing.com/resources/documentation/weather-api/timeline-weather-api/).
