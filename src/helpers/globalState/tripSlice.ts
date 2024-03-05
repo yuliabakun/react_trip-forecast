@@ -4,8 +4,8 @@ import { Trip } from '../types/Trip';
 const tripExample = {
   id: '1',
   destination: 'Paris',
-  startAt: '2024-03-07',
-  endAt: '2024-03-14',
+  startAt: '2024-03-14',
+  endAt: '2024-03-20',
 };
 
 interface tripSlice {
